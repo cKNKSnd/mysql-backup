@@ -1,0 +1,4 @@
+/script/mysqlbak-*.sh
+/mysql/data
+/script/backup.cron
+/script/entrypoint.log
