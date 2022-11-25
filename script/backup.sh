@@ -1,4 +1,7 @@
-./mysqlbak-medicine.sh
-./mysqlbak-ts-service.sh
-./mysqlbak-sport-service.sh
-./mysqlbak-sport-task2.sh
+#!/bin/bash
+echo 'Start backup data...'
+/root/script/mysqlbak-medicine.sh
+/root/script/mysqlbak-ts-service.sh
+/root/script/mysqlbak-sport-service.sh
+/root/script/mysqlbak-sport-task2.sh
+echo 'end backing data..'

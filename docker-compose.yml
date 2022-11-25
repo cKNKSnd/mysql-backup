@@ -1,13 +1,8 @@
 version: '3'
 services:
-  database-backup:
-    # image: mysql:8.0
+  mysql-backup:
     build: .
-    # restart: always
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
+    restart: always
     volumes:
-      - ./mysql/conf:/etc/mysql/conf.d
-      - ./mysql/data:/var/lib/mysql
       - ./script:/root/script
       - F:\药物警戒研究中心\59服务器数据备份\database-backup:/data/mysqlbak

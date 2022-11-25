@@ -12,9 +12,9 @@ dbname='db_sample'
 #备份时间
 backtime=`date +%Y%m%d`
 #备份输出日志路径
-logpath='/data/mysqlbak/medicine'
+logpath='/data/mysqlbak'
 #备份路数据库径
-datapath='/data/mysqlbak/medicine'
+datapath='/data/mysqlbak'
 
 echo "################## ${backtime} #############################" 
 echo "开始备份" 
@@ -28,7 +28,7 @@ echo "-------------------------------------------------"
 echo "备份时间为${backtime},备份数据库表 ${dbname} 开始"
 #正式备份数据库
 for table in $dbname; do
-source=`mysqldump -h ${dbserver} -P ${dbport} -u ${dbuser} -p${dbpasswd} ${table} > ${logpath}/${table}-${backtime}.sql` 2>> ${logpath}/mysqlback.log;
+source=`mysqldump --column-statistics=0 -h ${dbserver} -P ${dbport} -u ${dbuser} -p${dbpasswd} ${table} > ${logpath}/${table}-${backtime}.sql` 2>> ${logpath}/mysqlback.log;
 # source=`mysqldump --all-databases -u ${dbuser} -p${dbpasswd} > ${logpath}/${backtime}.sql` 2>> ${logpath}/mysqlback.log;
 #备份成功以下操作
 if [ "$?" == 0 ];then
